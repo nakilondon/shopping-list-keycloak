@@ -7,10 +7,10 @@ spring:
       enabled: true
 
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: jrnlewes@gmail.com
-    password: rddawqhzbigumnog
+    host: emailhost
+    port: 14141
+    username: email@tost.com
+    password: password
     properties:
       mail:
         smtp:
@@ -21,11 +21,11 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://keycloak.lewes.family/realms/LewesFamily
+          issuer-uri: https://test.com
           jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
 jwt:
   auth:
     converter:
-      resource-id: shopping-list-app
+      resource-id: app
       principal-attribute: preferred_username
 
