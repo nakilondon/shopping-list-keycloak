@@ -1,0 +1,31 @@
+server:
+  port: 8095
+
+spring:
+  h2:
+    console:
+      enabled: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jrnlewes@gmail.com
+    password: rddawqhzbigumnog
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://keycloak.lewes.family/realms/LewesFamily
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+jwt:
+  auth:
+    converter:
+      resource-id: shopping-list-app
+      principal-attribute: preferred_username
+

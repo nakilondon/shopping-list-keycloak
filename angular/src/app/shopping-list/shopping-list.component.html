@@ -1,0 +1,14 @@
+<div *ngIf="shoppingItems$ | async as shoppingItems">
+    <br/>
+    <div class="list-item" *ngIf="shoppingItems.length==0"><span>List is empty</span></div>
+    <div *ngIf="shoppingItems.length>0">
+        <div class="list-item" *ngFor="let item of shoppingItems$ | async">
+            <span>{{ item.name }}</span>
+        </div>
+        <button (click)="clearList()">Clear List</button>
+    </div>
+</div>
+
+
+
+
